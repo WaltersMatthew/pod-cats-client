@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar({ currentUser, handleLogout }) {
 	 const loggedIn = (
-		<section>
+		<section className='inline justify-content-end'>
 			{/* if the user is logged in... */}
 			<Link to="/profile">
 				Profile
@@ -11,7 +11,6 @@ export default function Navbar({ currentUser, handleLogout }) {
 			<Link to="/">
 				<span onClick={handleLogout}>Logout</span>
 			</Link>
-			<> | </>
 			
 			
 			
@@ -34,9 +33,9 @@ export default function Navbar({ currentUser, handleLogout }) {
 	return (
 		// <div className='container'>
 		<nav className='navbar fixed-top navbar-expand-xl bg-dark'>
-			<div className='container'>
+			<div className='container justify-content-start'>
 				<a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style={{color: 'white'}}>Cat Menu</a>
-				<li className="nav-item dropdown" >
+				<li className="nav-item dropdown justify-content-start mr-80" >
 					<ul className="dropdown-menu">
 						<li className='dropdown-item'><Link to="/cats/new">Post your 🐾</Link></li>
 						<li className='dropdown-item'><Link to="/cats">Random Cats</Link></li>
@@ -46,9 +45,9 @@ export default function Navbar({ currentUser, handleLogout }) {
 				</li>
 				<div  style={{color: 'white'}}>
 					<ul className="navbar-nav me-auto mb-2 mb-lg-0">
-						<li className='nav-item'> {' | '}<Link to="/"> Homepage</Link>{' | '}</li>
+						<li className='nav-item'><Link to="/"> Home</Link>{' | '}{currentUser ? loggedIn : loggedOut}</li>
 						
-						<li className='nav-item'>{currentUser ? loggedIn : loggedOut}</li>
+						{/* <li className='nav-item'>{currentUser ? loggedIn : loggedOut}</li> */}
 					</ul>
 				</div>
 			</div>
