@@ -35,7 +35,6 @@ export default function Feed() {
             <Link to={`/cats/id/${cat.catId}`}>
                 <img className='rounded-3xl border-4 border-black' src={cat.img_Url} alt='a cat' />
             </Link>
-            <p className='text-xl font-bold'>Posted by: {cat.user[0].name}</p>
             <p>Description: {cat.content}</p>
             <br></br>
             <br></br>
